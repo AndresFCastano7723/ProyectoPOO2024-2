@@ -13,8 +13,8 @@ public class Presentacion {
         return JOptionPane.showInputDialog(m);
     }
 
-    public float pedirDecimales(String m) {
-        return Float.parseFloat(JOptionPane.showInputDialog(m));
+    public double pedirDecimales(String m) {
+        return Double.parseDouble(JOptionPane.showInputDialog(m));
     }
 
     public void mostrarRes(String m) {
