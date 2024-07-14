@@ -19,13 +19,14 @@ public class Artesania extends Producto implements Serializable {
                 valTrabajo = vw.pedirEntero("Ingrese el porcentaje adicional de este producto\nen un rango de 0 a 50");
             } while (!vl.validarNumeros(String.valueOf(valTrabajo)) && valTrabajo <= 50);
         double per = (double)valTrabajo / 100;
-        setPrcioFinal(precioBruto + precioBruto * porcentajeGan + precioBruto * per);
+        setPrecioUnidad(precioBruto + precioBruto * porcentajeGan + precioBruto * per);
         
     }
 
     @Override
     public double calcularPrecioVenta(int cantidad) {
-        return prcioFinal * cantidad;
+        precioVenta = precioUnidad * cantidad;
+        return precioVenta;
     }
 
 }

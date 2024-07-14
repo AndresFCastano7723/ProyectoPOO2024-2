@@ -1,9 +1,10 @@
 
 package modelo;
 
+import java.io.Serializable;
 import vista.Presentacion;
 
-public class Accesorio extends Producto {
+public class Accesorio extends Producto implements Serializable{
     Presentacion vw = new Presentacion();
     Validaciones vl = new Validaciones();
     private final double D1 = 0.75;
@@ -15,20 +16,19 @@ public class Accesorio extends Producto {
     
     @Override
     public double calcularPrecioVenta(int cantidad){
-        double prcVen = 0;
         if(cantidad<6){
-            prcVen = prcioFinal*cantidad;
+            precioVenta = precioUnidad*cantidad;
         }else if (cantidad>=6 && cantidad<12){
-            prcVen = (precioBruto + precioBruto* D1)*cantidad;
+            precioVenta = (precioBruto + precioBruto* D1)*cantidad;
         }else if(cantidad>=12){
-            prcVen = (precioBruto + precioBruto * D2)*cantidad;
+            precioVenta = (precioBruto + precioBruto * D2)*cantidad;
         }
-        return prcVen;
+        return precioVenta;
     }
 
     @Override
     public void calcularPrecioUnidad() {
-        prcioFinal = precioBruto + precioBruto * porcentajeGan;
+        precioUnidad = precioBruto + precioBruto * porcentajeGan;
     }
 
 }

@@ -7,12 +7,17 @@ public abstract class Producto implements Serializable {
     private String nombre;
     private String referencia;
     protected double precioBruto;
-    protected double prcioFinal;
+    protected double precioUnidad;
+    protected double precioVenta;
     protected final double porcentajeGan = 0.2;
     private int cantidad = 0;
 
     public int getCantidad() {
         return cantidad;
+    }
+
+    public double getPrecioVenta() {
+        return precioVenta;
     }
 
     public void setCantidad(int cantidad) {
@@ -27,12 +32,12 @@ public abstract class Producto implements Serializable {
         this.cantidad -= a;
     }
 
-    public void setPrcioFinal(double prcioFinal) {
-        this.prcioFinal = prcioFinal;
+    public void setPrecioUnidad(double precioUnidad) {
+        this.precioUnidad = precioUnidad;
     }
 
-    public double getPrcioFinal() {
-        return prcioFinal;
+    public double getPrecioUnidad() {
+        return precioUnidad;
     }
 
     public String getNombre() {

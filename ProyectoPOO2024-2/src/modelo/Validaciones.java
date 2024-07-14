@@ -1,6 +1,8 @@
 package modelo;
 
-public class Validaciones {
+import java.io.Serializable;
+
+public class Validaciones implements Serializable{
 
     public boolean validarTexto(String n){
             return n.matches("[a-zA-Z]*");

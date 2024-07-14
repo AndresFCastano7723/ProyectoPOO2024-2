@@ -10,6 +10,12 @@ public class Inventario implements Serializable {
     Validaciones vl = new Validaciones();
     private HashMap<String, Producto> inventario;
 
+    public HashMap<String, Producto> getInventario() {
+        return inventario;
+    }
+    
+    
+
     public Inventario() {
         this.inventario = new HashMap<String, Producto>();
     }
@@ -53,7 +59,7 @@ public class Inventario implements Serializable {
                         + "\nReferencia: " + ref
                         + "\nDescripcion: " + dsc
                         + "\nPrecio Bruto: " + pb
-                        + "\nPrecio de venta por unidad: " + art.prcioFinal
+                        + "\nPrecio de venta por unidad: " + art.precioUnidad
                         + "\nCantidad: " + c;
                 vw.mostrarRes(pInfo);
             }
@@ -71,7 +77,7 @@ public class Inventario implements Serializable {
                         + "\nReferencia: " + ref
                         + "\nDescripcion: " + dsc
                         + "\nPrecio Bruto: " + pb
-                        + "\nPrecio de venta por unidad: " + acc.prcioFinal
+                        + "\nPrecio de venta por unidad: " + acc.precioUnidad
                         + "\nCantidad: " + c;
                 vw.mostrarRes(pInfo2);
             }
@@ -87,7 +93,7 @@ public class Inventario implements Serializable {
                     + "\t" + inventario.get(r).getNombre()
                     + "\t" + inventario.get(r).getPrecioBruto()
                     + "\t" + inventario.get(r).getCantidad()
-                    + "\t" + inventario.get(r).prcioFinal + "\n";
+                    + "\t" + inventario.get(r).precioUnidad + "\n";
             cnt++;
         }
         msg += "\n\nIngrese el ID del producto a agregar.";
@@ -109,7 +115,7 @@ public class Inventario implements Serializable {
                     + "\t" + inventario.get(r).getNombre()
                     + "\t" + inventario.get(r).getPrecioBruto()
                     + "\t" + inventario.get(r).getCantidad()
-                    + "\t" + inventario.get(r).prcioFinal + "\n";
+                    + "\t" + inventario.get(r).precioUnidad + "\n";
             cnt++;
         }
         msg += "\n\nIngrese el ID del producto que desea retirar.";
@@ -123,7 +129,7 @@ public class Inventario implements Serializable {
                 + "\t" + inventario.get(id).getNombre()
                 + "\t" + inventario.get(id).getPrecioBruto()
                 + "\t" + inventario.get(id).getCantidad()
-                + "\t" + inventario.get(id).prcioFinal
+                + "\t" + inventario.get(id).precioUnidad
                 + "\n"
                 + "\n1. Confirmar."
                 + "\n2. Cancelar";
@@ -151,7 +157,7 @@ public class Inventario implements Serializable {
                     + "\t" + inventario.get(r).getNombre()
                     + "\t" + inventario.get(r).getPrecioBruto()
                     + "\t" + inventario.get(r).getCantidad()
-                    + "\t" + inventario.get(r).prcioFinal + "\n";
+                    + "\t" + inventario.get(r).precioUnidad + "\n";
             cnt++;
         }
         msg += "\n\nIngrese el ID del producto a retirar.";
@@ -176,7 +182,7 @@ public class Inventario implements Serializable {
                     + "\t" + inventario.get(r).getNombre()
                     + "\t" + inventario.get(r).getPrecioBruto()
                     + "\t" + inventario.get(r).getCantidad()
-                    + "\t" + inventario.get(r).prcioFinal + "\n";
+                    + "\t" + inventario.get(r).precioUnidad + "\n";
             cnt++;
         }
         vw.mostrarRes(msg);

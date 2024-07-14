@@ -37,10 +37,11 @@ public class Ejecutar {
 
                 case 2:
                     realizarVenta();
+                    tienda.crearVenta();
                     break;
 
                 case 3:
-                    mostrarVentas();
+                    tienda.mostrarVentas();
                     break;
             }
         } while (op != 0);
@@ -81,7 +82,7 @@ public class Ejecutar {
     private void mostrarVentas() {
     }
 
-    public final String defaulMessage = """
+    public final String defaultMessage = """
                                         ⁣⣿⣿⡿⠋⠄⡀⣿⣿⣿⣿⣿⣿⣿⠿⠛⠋⣉⣉⣉⡉⠙⠻
                                         ⣿⣿⣇⠔⠈⣿⣿⣿⣿⡿⠛⢉⣤⣶⣾⣿⣿⣿⣿⣿⣿⣦
                                         ⣿⠃⠄⢠⣾⣿⣿⠟⢁⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
