@@ -1,7 +1,6 @@
 package modelo;
 
 import java.io.Serializable;
-import javax.swing.JOptionPane;
 import vista.Presentacion;
 
 public class Artesania extends Producto implements Serializable {
@@ -15,12 +14,18 @@ public class Artesania extends Producto implements Serializable {
     }
 
     @Override
-    public void calcularPrecioFinal() {
+    public void calcularPrecioUnidad() {
             do {
-                valTrabajo = vw.pedirEntero("Ingrese el porcentaje adicional de este producto\nen un rango de 0 a 100");
-            } while (!vl.validarNumeros(String.valueOf(valTrabajo)));
-        double per = valTrabajo / 100;
-        setPrcioFinal(getPrecioBruto() + getPrecioBruto() * getPorcentajeGan() + getPrecioBruto() * per);
+                valTrabajo = vw.pedirEntero("Ingrese el porcentaje adicional de este producto\nen un rango de 0 a 50");
+            } while (!vl.validarNumeros(String.valueOf(valTrabajo)) && valTrabajo <= 50);
+        double per = (double)valTrabajo / 100;
+        setPrcioFinal(precioBruto + precioBruto * porcentajeGan + precioBruto * per);
+        
+    }
+
+    @Override
+    public double calcularPrecioVenta(int cantidad) {
+        return prcioFinal * cantidad;
     }
 
 }

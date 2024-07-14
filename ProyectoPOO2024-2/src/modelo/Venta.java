@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 
 class Venta implements Serializable{
+    Tienda t;
     private String fecha;
     private String nombreCliente;
     private String idVenta;
@@ -19,6 +20,5 @@ class Venta implements Serializable{
     }
     
     public void agregarProducto(String ref){
-        
     }
 }

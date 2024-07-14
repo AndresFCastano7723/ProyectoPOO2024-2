@@ -6,10 +6,10 @@ public abstract class Producto implements Serializable {
 
     private String nombre;
     private String referencia;
-    private double precioBruto;
+    protected double precioBruto;
     protected double prcioFinal;
     protected final double porcentajeGan = 0.2;
-    private int cantidad;
+    private int cantidad = 0;
 
     public int getCantidad() {
         return cantidad;
@@ -57,5 +57,6 @@ public abstract class Producto implements Serializable {
         this.precioBruto = precioBruto;
     }
 
-    public abstract void calcularPrecioFinal();
+    public abstract void calcularPrecioUnidad();
+    public abstract double calcularPrecioVenta(int cantidad);
 }
