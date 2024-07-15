@@ -48,7 +48,7 @@ public class Tienda implements Serializable {
                 } while (!vl.validarNumeros(ref));
             } while (!verificarIDProducto(ref));
             String msg1 = "El producto elegido es el siguiente:\n\n";
-            msg1 += "Referencia:\t" + inventario.getInventario().get(ref)
+            msg1 += "Referencia:\t" + inventario.getInventario().get(ref).getReferencia()
                     + "\nDescripcion:\t" + inventario.getInventario().get(ref).getNombre()
                     + "\nCantidad disponible:\t" + inventario.getInventario().get(ref).getCantidad();
             vw.mostrarRes(msg1);
@@ -60,6 +60,7 @@ public class Tienda implements Serializable {
             v.agregarProducto(p, cant);
             op = vw.pedirEntero("¿Desea agregar otro producto?\n1. SI\t0. NO");
         } while (op != 0);
+        v.calcularValor(v.getProductos());
         v.mostrarFactura();
         ventas.put(id, v);
     }

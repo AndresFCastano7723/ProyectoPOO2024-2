@@ -39,7 +39,6 @@ class Venta implements Serializable{
         this.fecha = capturarFecha();
         this.nombreCliente = nombreCliente;
         this.idVenta = idVenta;
-        this.valorAPagar = calcularValor(productos);
         this.productos = new HashMap<String, Producto>();
     }
     
@@ -54,7 +53,7 @@ class Venta implements Serializable{
     public double calcularValor(HashMap<String,Producto> productos){
         
         double v = 0;
-        for(String r : productos.keySet()){//Error NullPointerException
+        for(String r : productos.keySet()){
             if(productos.get(r) instanceof Accesorio){
                 v += productos.get(r).getPrecioVenta();
             }else if(productos.get(r) instanceof Artesania){
